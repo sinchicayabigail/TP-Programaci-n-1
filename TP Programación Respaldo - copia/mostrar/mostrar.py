@@ -2,6 +2,10 @@ from validaciones.validaciones import validar_numero
 
 
 def seleccionar_tabla(tablas, cantidad_tablas):
+    '''
+    Permite elegir una tabla de las disponibles.
+    '''
+
     posicion = -1
 
     if cantidad_tablas == 0:
@@ -22,9 +26,11 @@ def seleccionar_tabla(tablas, cantidad_tablas):
 
     return posicion
 
-
-
 def mostrar_tabla(tabla):
+    '''
+    Muestra todos los datos de una tabla.
+    '''
+
     print()
     print("Tabla", tabla[0])
 
@@ -44,6 +50,10 @@ def mostrar_tabla(tabla):
         print(fila)
 
 def mostrar_fila(tabla):
+    '''
+    Permite seleccionar y mostrar una fila.
+    '''
+
     fila = input("Ingrese el número de fila")
 
     while not validar_numero(fila) or int(fila) < 1 or int(fila) > tabla[4]:
@@ -63,6 +73,10 @@ def mostrar_fila(tabla):
 
 
 def mostrar_columna(tabla):
+    '''
+    Permite seleccionar y mostrar una columna.
+    '''
+
     columna = input("Ingrese el número de columna")
 
     while not validar_numero(columna) or int(columna) < 1 or int(columna) > tabla[5]:
@@ -84,6 +98,10 @@ def mostrar_columna(tabla):
 
 
 def seleccionar_columnas(tabla):
+    '''
+    Permite elegir qué columnas se desean mostrar.
+    '''
+
     columnas_elegidas = [None] * tabla[5]
 
     print("Columnas disponibles")
@@ -136,6 +154,10 @@ def seleccionar_columnas(tabla):
 
 
 def filtrar_tabla(tabla):
+    '''
+    Busca datos específicos dentro de una tabla.
+    '''
+
     print("Columnas disponibles")
 
     for i in range(tabla[5]):
@@ -172,6 +194,10 @@ def filtrar_tabla(tabla):
 
 
 def gestionar_mostrar(tablas, cantidad_tablas):
+    '''
+    Muestra las opciones para visualizar y filtrar tablas.
+    '''
+    
     opcion = ""
 
     while opcion != "6":

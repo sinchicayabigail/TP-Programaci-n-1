@@ -2,6 +2,10 @@ from validaciones.validaciones import validar_numero
 
 
 def ingresar_numero(mensaje, minimo, maximo):
+    '''
+    Solicita un número y verifica que esté dentro del rango indicado.
+    '''
+
     numero = input(mensaje)
 
     while not validar_numero(numero) or int(numero) < minimo or int(numero) > maximo:
@@ -12,6 +16,10 @@ def ingresar_numero(mensaje, minimo, maximo):
 
 
 def crear_matriz(cantidad_filas, cantidad_columnas):
+    '''
+    Crea una matriz con la cantidad de filas y columnas indicada.
+    '''
+
     matriz = [None] * cantidad_filas
 
     for i in range(cantidad_filas):
@@ -21,6 +29,10 @@ def crear_matriz(cantidad_filas, cantidad_columnas):
 
 
 def crear_tabla(tablas, cantidad_tablas):
+    '''
+    Permite crear una tabla y cargar sus datos.
+    '''
+
     if cantidad_tablas == 10:
         print("No se pueden crear más tablas.")
     else:
@@ -99,6 +111,10 @@ def crear_tabla(tablas, cantidad_tablas):
     return cantidad_tablas
 
 def mostrar_tabla(tabla):
+    '''
+    Muestra los datos de una tabla.
+    '''
+
     print("Tabla", tabla[0])
 
     for i in range(tabla[4]):
@@ -106,6 +122,10 @@ def mostrar_tabla(tabla):
             print(tabla[1][j], tabla[3][i][j])
 
 def seleccionar_tabla(tablas, cantidad_tablas):
+    '''
+    Permite elegir una tabla de las disponibles.
+    '''
+
     posicion = -1
 
     if cantidad_tablas == 0:
@@ -126,6 +146,10 @@ def seleccionar_tabla(tablas, cantidad_tablas):
 
 
 def modificar_fila(tabla):
+    '''
+    Permite modificar los datos de una fila.
+    '''
+
     fila = ingresar_numero(
         "Ingrese el número de fila que desea modificar",
         1,
@@ -143,6 +167,9 @@ def modificar_fila(tabla):
 
 
 def modificar_columna(tabla):
+    '''
+    Permite modificar los datos de una columna.
+    '''
     columna = ingresar_numero(
         "Ingrese el número de columna que desea modificar",
         1,
@@ -168,6 +195,10 @@ def modificar_columna(tabla):
 
 
 def gestionar_tablas(tablas, cantidad_tablas):
+    '''
+    Muestra las opciones para crear, mostrar y modificar tablas.
+    '''
+    
     opcion = ""
 
     while opcion != "4":

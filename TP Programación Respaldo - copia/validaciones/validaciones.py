@@ -1,4 +1,7 @@
 def validar_numero(cadena: str) -> bool:
+    '''
+    Verifica si el texto ingresado contiene solamente números.
+    '''
 
     i = 0
     es_numero = True
@@ -17,6 +20,9 @@ def validar_numero(cadena: str) -> bool:
 
 
 def validar_decimal(cadena: str) -> bool:
+    '''
+    Verifica si el texto contiene solamente dígitos.
+    '''
     
     i = 0
     es_decimal = True
@@ -40,6 +46,9 @@ def validar_decimal(cadena: str) -> bool:
 
 
 def validar_rango(valor: int, minimo: int, maximo: int) -> bool:
+    '''
+    Comprueba si un número se encuentra dentro de un rango.
+    '''
 
     if valor >= minimo and valor <= maximo:
         return True
@@ -48,6 +57,9 @@ def validar_rango(valor: int, minimo: int, maximo: int) -> bool:
 
 
 def es_par(numero: int) -> bool:
+    '''
+    Verifica si un número es par.
+    '''
 
     if numero % 2 == 0:
         return True
@@ -56,6 +68,9 @@ def es_par(numero: int) -> bool:
 
 
 def es_primo(numero: int, divisor: int = 2) -> bool:
+    '''
+    Comprueba si un número es primo mediante recursividad.
+    '''
 
     if numero <= 1:
         return False
@@ -71,6 +86,9 @@ def es_primo(numero: int, divisor: int = 2) -> bool:
 
 
 def es_multiplo(numero: int, otro_numero: int) -> bool:
+    '''
+    Verifica si un número es múltiplo de otro.
+    '''
 
     if otro_numero == 0:
         return False

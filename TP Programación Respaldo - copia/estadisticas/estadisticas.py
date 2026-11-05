@@ -2,6 +2,10 @@ from validaciones.validaciones import validar_numero
 
 
 def seleccionar_tabla(tablas, cantidad_tablas):
+    '''
+    Permite elegir una tabla para realizar los cálculos.
+    '''
+
     posicion = -1
 
     if cantidad_tablas == 0:
@@ -24,6 +28,10 @@ def seleccionar_tabla(tablas, cantidad_tablas):
 
 
 def seleccionar_columna(tabla):
+    '''
+    Permite elegir una columna de la tabla.
+    '''
+
     print("Columnas disponibles")
 
     for i in range(tabla[5]):
@@ -39,6 +47,10 @@ def seleccionar_columna(tabla):
 
 
 def obtener_datos_numericos(tabla, columna):
+    '''
+    Obtiene los valores numéricos de una columna.
+    '''
+
     datos = [None] * tabla[4]
     cantidad = 0
 
@@ -53,6 +65,10 @@ def obtener_datos_numericos(tabla, columna):
 
 
 def ordenar_datos(datos, cantidad):
+    '''
+    Ordena los números de menor a mayor.
+    '''
+
     for i in range(cantidad - 1):
         for j in range(cantidad - 1 - i):
             if datos[j] > datos[j + 1]:
@@ -62,6 +78,10 @@ def ordenar_datos(datos, cantidad):
 
 
 def calcular_frecuencias(datos, cantidad):
+    '''
+    Calcula las frecuencias y la moda de los datos.
+    '''
+
     valores = [None] * cantidad
     frecuencias = [0] * cantidad
     cantidad_valores = 0
@@ -105,6 +125,10 @@ def calcular_frecuencias(datos, cantidad):
 
 
 def calcular_maximo_minimo(datos, cantidad):
+    '''
+    Calcula el valor máximo y mínimo de los datos.
+    '''
+
     mayor = datos[0]
     menor = datos[0]
 
@@ -120,6 +144,10 @@ def calcular_maximo_minimo(datos, cantidad):
 
 
 def calcular_promedios(datos, cantidad):
+    '''
+    Calcula el promedio aritmético y geométrico.
+    '''
+
     suma = 0
     producto = 1
 
@@ -135,6 +163,10 @@ def calcular_promedios(datos, cantidad):
 
 
 def calcular_diferencias(datos, cantidad):
+    '''
+    Calcula el resultado y el desvio.
+    '''
+
     suma = 0
 
     for i in range(cantidad):
@@ -151,11 +183,14 @@ def calcular_diferencias(datos, cantidad):
     desvio = resultado ** 0.5
 
     print("Resultado", resultado)
-    print("Desviación estándar", desvio)
+    print("Desvio", desvio)
 
 
 def calcular_posicion(datos, cantidad):
     ordenar_datos(datos, cantidad)
+    '''
+    Ordena los datos y calcula la mediana.
+    '''
 
     if cantidad % 2 == 0:
         posicion = cantidad // 2
@@ -166,8 +201,11 @@ def calcular_posicion(datos, cantidad):
 
     print("Mediana", mediana)
 
-
 def gestionar_estadisticas(tablas, cantidad_tablas):
+    '''
+    Permite realizar los cálculos estadísticos de una tabla.
+    '''
+    
     posicion = seleccionar_tabla(tablas, cantidad_tablas)
 
     if posicion != -1:
